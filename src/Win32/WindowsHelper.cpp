@@ -40,7 +40,7 @@ PBYTE WindowsHelper::getIconDirectory(const int &inResourceId) {
  * This will attempt to load a single icon from an icon directory
  * If the requested size isn't found, the first one is returned
  *****************************************************************************/
-HICON WindowsHelper::getIconFromIconDirectory(const PBYTE &inIconDirectory, const uint &inSize) {
+HICON WindowsHelper::getIconFromIconDirectory(const PBYTE &inIconDirectory, const unsigned int &inSize) {
 	HMODULE hModule = GetModuleHandle(nullptr);
 	int resourceId = LookupIconIdFromDirectoryEx(inIconDirectory, TRUE, inSize, inSize, LR_DEFAULTCOLOR);
 	HRSRC hResource = FindResource(hModule, MAKEINTRESOURCE(resourceId), RT_ICON);

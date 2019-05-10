@@ -8,3 +8,18 @@ Thumbs.db
 
 # Project specific
 #
+MAIN.ipch
+*.user
+*.ncb
+*.sbr
+*.suo
+*.ilk
+*.bsc
+*.pdb
+*.aps
+*.pch
+*.ipch
+*.sdf
+*.opensdf
+*.sln.docstates
+ipch/

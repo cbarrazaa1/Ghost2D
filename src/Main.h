@@ -16,6 +16,5 @@
 	WindowsHelper __windowsHelper;
 #endif // _WIN32
 
-//
 
 #endif // MAIN_HPP

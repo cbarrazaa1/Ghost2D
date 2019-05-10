@@ -13,10 +13,7 @@
                 "_DEBUG"
 			],
 			"cStandard": "c11",
-			"cppStandard": "c++17",
-			"forcedInclude": [
-				"${workspaceFolder}/src/PCH.hpp"
-			]
+			"cppStandard": "c++17"
 		},
 		{
 			"name": "Mac",
@@ -30,10 +27,7 @@
                 "_DEBUG"
 			],
 			"cStandard": "c11",
-			"cppStandard": "c++17",
-			"forcedInclude": [
-				"${workspaceFolder}/src/PCH.hpp"
-			]
+			"cppStandard": "c++17"
 		},
 		{
 			"name": "Win32",
@@ -49,10 +43,7 @@
                 "_UNICODE"
 			],
 			"cStandard": "c11",
-			"cppStandard": "c++17",
-			"forcedInclude": [
-				"${workspaceFolder}/src/PCH.hpp"
-			]
+			"cppStandard": "c++17"
 		}
 	],
 	"version": 4
