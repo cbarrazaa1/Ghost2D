@@ -3,8 +3,7 @@
 
 #include <X11/Xlib.h>
 
-class LinuxHelper
-{
+class LinuxHelper {
 	public:
 		LinuxHelper();
 };

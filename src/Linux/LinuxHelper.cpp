@@ -1,8 +1,7 @@
 #ifdef __linux__
 #include "LinuxHelper.hpp"
 
-LinuxHelper::LinuxHelper()
-{
+LinuxHelper::LinuxHelper() {
 	XInitThreads();
 }
 

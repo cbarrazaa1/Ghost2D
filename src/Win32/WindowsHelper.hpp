@@ -3,8 +3,7 @@
 
 #include "Icon.h"
 
-class WindowsHelper
-{
+class WindowsHelper {
 	public:
 		WindowsHelper();
 

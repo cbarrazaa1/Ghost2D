@@ -1,8 +1,7 @@
 #ifdef __APPLE__
 #include "MacHelper.hpp"
 
-MacHelper::MacHelper()
-{
+MacHelper::MacHelper() {
 	// This function ensures the working directory is set inside of the bundle if in production mode
 	CFBundleRef mainBundle = CFBundleGetMainBundle();
 	CFURLRef resourcesURL = CFBundleCopyResourcesDirectoryURL(mainBundle);
@@ -13,11 +12,11 @@ MacHelper::MacHelper()
 	CFRelease(resourcesURL);
 
 	// Actually do the check here
-	if (pathSet)
-	{
+	if (pathSet) {
 		std::string pathStr = path;
-		if (pathStr.find(".app") != std::string::npos)
+		if (pathStr.find(".app") != std::string::npos) {
 			chdir(path);
+		}
 	}
 }
 

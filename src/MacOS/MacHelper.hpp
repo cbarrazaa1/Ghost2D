@@ -3,8 +3,7 @@
 
 #include "CoreFoundation/CoreFoundation.h"
 
-class MacHelper
-{
+class MacHelper {
 	public:
 		MacHelper();
 
