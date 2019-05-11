@@ -4,6 +4,7 @@ Engine::Engine(unsigned int width, unsigned int height, const sf::String& title,
 	// create window
 	window = new sf::RenderWindow(sf::VideoMode(width, height, 32U), title);
 	spriteBatch = new SpriteBatch(*window);
+	input = new Input(*window);
 
 	// lock framerate to 60 if lock is on
 	if(framerateLock) {
@@ -12,14 +13,13 @@ Engine::Engine(unsigned int width, unsigned int height, const sf::String& title,
 	}
 
 	grass.loadFromFile("content/grass.png");
-	dirt.loadFromFile("content/dirt.png");
-	dark.loadFromFile("content/dark.png");
 
 	// start the game
 	start();
 }
 
 Engine::~Engine() {
+	delete input;
 	delete spriteBatch;
 	delete window;
 }
@@ -42,6 +42,9 @@ void Engine::start() {
 				window->close();
 			}
 		}
+
+		// update game
+		input->update();
 
 		// render the game
 		window->clear();

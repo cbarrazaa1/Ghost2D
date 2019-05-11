@@ -1,8 +1,9 @@
 #include "SpriteBatch.h"
+#define MAX_CAPACITY 400000
 
-SpriteBatch::SpriteBatch(sf::RenderWindow& window) : window(window) {
-	capacity = 400000;
-	vertices.resize(400);
+SpriteBatch::SpriteBatch(sf::RenderWindow& parentWindow) : parentWindow(parentWindow) {
+	capacity = MAX_CAPACITY;
+	vertices.resize(MAX_CAPACITY / 1000);
 }
 
 SpriteBatch::~SpriteBatch() {
@@ -17,8 +18,16 @@ void SpriteBatch::begin() {
 }
 
 void SpriteBatch::end() {
+	unsigned int index = 0;
+
 	enqueue();
-	render();
+	sf::RenderStates states;
+	for(const auto& item : textures) {
+		states.texture = item.texture;
+		parentWindow.draw(&vertices[index], item.count, sf::Quads, states);
+		index += item.count;
+	}
+
 	active = false;
 }
 
@@ -74,14 +83,4 @@ void SpriteBatch::drawTexture(sf::Texture& texture, const sf::Vector2f& position
 	v[3].texCoords.x = 0;
 	v[3].texCoords.y = size.y;
 	v[3].color = sf::Color::White;
-}
-
-void SpriteBatch::render() {
-	unsigned int index = 0;
-	sf::RenderStates states;
-	for(const auto& item : textures) {
-		states.texture = item.texture;
-		window.draw(&vertices[index], item.count, sf::Quads, states);
-		index += item.count;
-	}
 }

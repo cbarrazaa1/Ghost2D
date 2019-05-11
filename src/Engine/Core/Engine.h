@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "SpriteBatch.h"
+#include "Input.h"
 
 class Engine {
 public:
@@ -12,10 +13,9 @@ public:
 private:
 	sf::RenderWindow* window;
 	SpriteBatch* spriteBatch;
+	Input* input;
+
 	sf::Texture grass;
-	sf::Texture dirt;
-	sf::Texture dark;
-	sf::Sprite sprite;
 
 	void start();
 };

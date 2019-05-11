@@ -16,7 +16,7 @@ struct QueueItem {
 
 class SpriteBatch {
 public:
-	SpriteBatch(sf::RenderWindow& window);
+	SpriteBatch(sf::RenderWindow& parentWindow);
 	~SpriteBatch();
 
 	void begin();
@@ -24,7 +24,7 @@ public:
 	void drawTexture(sf::Texture& texture, const sf::Vector2f& position);
 
 private:
-	sf::RenderWindow& window;
+	sf::RenderWindow& parentWindow;
 	std::vector<QueueItem> textures;
 	std::vector<sf::Vertex> vertices;
 	sf::Texture* activeTexture;
@@ -35,5 +35,4 @@ private:
 
 	void enqueue();
 	unsigned int createTexture(sf::Texture& texture);
-	void render();
 };
