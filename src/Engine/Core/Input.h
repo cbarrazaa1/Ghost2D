@@ -8,7 +8,7 @@ typedef sf::Mouse::Button MouseButton;
 class Input {
 public:
 	Input(sf::RenderWindow& parentWindow);
-	virtual ~Input() { }
+	~Input() { }
 
 	void update();
 

@@ -15,7 +15,7 @@ void Input::update() {
 		pressedKeys[i] = isKeyDown((KeyCode)i);
 	}
 
-	for(unsigned int i = 0; i < KeyCode::KeyCount; i++) {
+	for(unsigned int i = 0; i < MouseButton::ButtonCount; i++) {
 		pressedButtons[i] = isMouseDown((MouseButton)i);
 	}
 }
